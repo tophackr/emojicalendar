@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+{% include header.html %}
+<body>{% comment %}<!-- {% if page.url == '/' %} style="background: url('{{ '/assets/banner.webp' | relative_url }}') no-repeat center center fixed; background-size: 100%" style="background-image: url('{{ site.image.background | relative_url }}');"{% endif %} -->{% endcomment %}
+    {% include navbar.html %}
+    <div class="container">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+</body>
+</html>
