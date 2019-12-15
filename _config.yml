@@ -1,0 +1,14 @@
+title: 📅 Emoji calendar
+description: Emoji Calendar
+baseurl: ''
+url: 'https://📅.ml'
+
+image:
+  logo: /assets/et8h.png
+  large: /assets/et8h.png
+  background: /assets/background.png
+
+markdown: kramdown
+timezone: Europe/Moscow
+encoding: utf-8
+#exclude: ['.gitignore']
