@@ -1,0 +1,46 @@
+# id:
+#   date (12.dec.2012) jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+#   board: 'ru' (optional)
+#   year: false
+#   class: 'primary' (success - green, danger - red, warning - yellow, dark, light, secondart - gray, primary - blue)
+#   text: |-
+#     Text for date
+#   link: 'https://google.com/' (optional)
+#   badge: 'Ad' (optional)
+#   delay: true (optional)
+#
+
+1:
+  date: '01.jan'
+  board: 'en'
+  year: false
+  class: 'dark'
+  text: |-
+    Here can be your advertisements!
+  badge: 'Ad'
+2:
+  date: '01.jan'
+  board: 'ru'
+  year: false
+  class: 'dark'
+  text: |-
+    Тут может быть ваша реклама!
+  badge: 'Реклама'
+3:
+  date: '31.dec'
+  board: 'en'
+  year: false
+  class: 'dark'
+  text: |-
+    New Year!
+  link: 'https://en.wikipedia.org/wiki/New_Year'
+  delay: true
+4:
+  date: '31.dec'
+  board: 'ru'
+  year: false
+  class: 'dark'
+  text: |-
+    Новый год
+  link: 'https://ru.wikipedia.org/wiki/Новый_год'
+  delay: true
