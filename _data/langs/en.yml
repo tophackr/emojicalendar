@@ -1,0 +1,34 @@
+icon: 🇺🇸
+name: 'English'
+
+sitename: '📅 Emoji Calendar'
+
+ad: 'Advertising'
+contact_us: 'Contact us'
+translate: 'Translate'
+
+month_0:  'January'
+month_1:  'February'
+month_2:  'March'
+month_3:  'April'
+month_4:  'May'
+month_5:  'June'
+month_6:  'July'
+month_7:  'August'
+month_8:  'September'
+month_9:  'October'
+month_10: 'November'
+month_11: 'December'
+
+week_0: 'Mo'
+week_1: 'Tu'
+week_2: 'We'
+week_3: 'Th'
+week_4: 'Fr'
+week_5: 'Sa'
+week_6: 'Su'
+
+today: 'Today'
+
+calendar_on_1: 'Calendar for '
+calendar_on_2: ''
