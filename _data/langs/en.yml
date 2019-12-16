@@ -7,6 +7,9 @@ ad: 'Advertising'
 contact_us: 'Contact us'
 translate: 'Translate'
 
+calendar_on_1: 'Calendar for '
+calendar_on_2: ''
+
 month_0:  'January'
 month_1:  'February'
 month_2:  'March'
@@ -30,5 +33,4 @@ week_6: 'Su'
 
 today: 'Today'
 
-calendar_on_1: 'Calendar for '
-calendar_on_2: ''
+add_date: 'If you want to add a known date to your calendar please contact <a href="https://t.me/tophackr" target="_blank">telegram</a>'

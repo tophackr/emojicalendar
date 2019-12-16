@@ -7,6 +7,9 @@ ad: 'Реклама'
 contact_us: 'Связаться с нами'
 translate: 'Перевести'
 
+calendar_on_1: 'Календарь на '
+calendar_on_2: ' год'
+
 month_0:  'Январь'
 month_1:  'Февраль'
 month_2:  'Март'
@@ -30,5 +33,4 @@ week_6: 'Вс'
 
 today: 'Сегодня'
 
-calendar_on_1: 'Календарь на '
-calendar_on_2: ' год'
+add_date: 'Если вы хотите добавить известную дату в календарь свяжитесь по <a href="https://t.me/tophackr" target="_blank">telegram</a>'
