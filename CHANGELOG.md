@@ -26,5 +26,5 @@
 
 - First release
 
-[v2.0]: https://gitlab.com/tophackr/calendar/compare/v2.0-r...v1.0-r
-[v1.0]: https://gitlab.com/tophackr/calendar/compare/v1.0-r...master
+[v2.0]: https://gitlab.com/tophackr/calendar/compare/v1.0-r...v2.0-r
+[v1.0]: https://gitlab.com/tophackr/calendar/compare/9e551822...v1.0-r
