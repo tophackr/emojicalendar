@@ -1,4 +1,9 @@
 # Changelog
+## [v2.0.1] - 2019.12.18
+### Removed
+- `LICENSE` from `public_html`  
+- `CHANGELOG.md` from `public_html`
+
 ## [v2.0] - 2019.12.18
 ### Added
 - Page for add date  
@@ -26,5 +31,6 @@
 
 - First release
 
+[v2.0.1]: https://gitlab.com/tophackr/calendar/compare/v2.0-r...v2.0.1-r
 [v2.0]: https://gitlab.com/tophackr/calendar/compare/v1.0-r...v2.0-r
 [v1.0]: https://gitlab.com/tophackr/calendar/compare/9e551822...v1.0-r
