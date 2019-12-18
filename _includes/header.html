@@ -8,7 +8,7 @@
         {%- if page.title -%}
             {{ page.title | smartify }}
         {%- else -%}
-            {{ site.data.langs[page.lang].sitename | default: site.data.langs['en'].sitename | smartify}}
+            {{ site.data.langs[page.lang].sitename | default: site.data.langs['en'].sitename | smartify }}
         {%- endif -%}
     </title>
 
@@ -21,4 +21,8 @@
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
 
     {% include analytics.html %}
+    {%- if page.slug -%}
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    {%- endif -%}
 </head>
