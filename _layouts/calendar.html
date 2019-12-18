@@ -3,112 +3,46 @@ layout: default
 default_lang: ru
 ---
 
-<div class="row justify-content-center py-5">
-    <table class="table table-borderless" id="calendarBig">
-     <thead>
-        <tr><td class="btn-link text-center" style="cursor: pointer;"><td class="h4 text-center" colspan="2" style="text-decoration: underline;"><td class="btn-link text-center" style="cursor: pointer;">
-     <tbody>
-        <tr>
-            <td>
-                <table class="card" data-m="0">
+<div class="row justify-content-center my-5">
+    <div class="col-md-10">
+        
+        <div id="calendarBig" class="row">
+            <div id="prev" class="btn-link text-center col-sm-12 col-md-12 col-lg-3" style="cursor: pointer;"></div>
+            <div id="now" class="h4 text-center col-sm-12 col-md-12 col-lg-6 pb-3" style="text-decoration: underline;"></div>
+            <div id="next" class="btn-link text-center col-sm-12 col-md-12 col-lg-3" style="cursor: pointer;"></div>
+            {%- for months in (0..11) -%}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <table class="table table-borderless card mb-4" data-m="{{ months }}">
                     <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_0 | default: site.data.langs['en'].month_0 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
+                        {%- assign months1 = 'month_' | append: months -%}
+                        <tr class="d-flex flex-column">
+                            <td class="h6 card-title text-center mb-0" colspan="7">{{ site.data.langs[page.lang][months1] | default: site.data.langs['en'][months1] }}</td>
+                        </tr>
+                        <tr class="d-flex justify-content-around">
+                            {%- for weeks in (0..6) -%}
+                            {%- assign weeks1 = 'week_' | append: weeks -%}
+                            <td class="card-subtitle text-muted px-0">{{ site.data.langs[page.lang][weeks1] | default: site.data.langs['en'][weeks1] }}</td>
+                            {%- endfor -%}
+                        </tr>
+                    </thead>
+                    <tbody class="card-body"></tbody>
                 </table>
-            <td>
-                <table class="card" data-m="1">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_1 | default: site.data.langs['en'].month_1 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="2">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_2 | default: site.data.langs['en'].month_2 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="3">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_3 | default: site.data.langs['en'].month_3 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-        <tr>
-            <td>
-                <table class="card" data-m="4">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_4 | default: site.data.langs['en'].month_4 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="5">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_5 | default: site.data.langs['en'].month_5 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="6">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_6 | default: site.data.langs['en'].month_6 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="7">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_7 | default: site.data.langs['en'].month_7 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-        <tr>
-            <td>
-                <table class="card" data-m="8">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_8 | default: site.data.langs['en'].month_8 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="9">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_9 | default: site.data.langs['en'].month_9 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="10">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_10 | default: site.data.langs['en'].month_10 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-            <td>
-                <table class="card" data-m="11">
-                    <thead class="card-header">
-                        <tr><td class="h6 card-title text-center" colspan="7">{{ site.data.langs[page.lang].month_11 | default: site.data.langs['en'].month_11 }}
-                        <tr><td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_0 | default: site.data.langs['en'].week_0 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_1 | default: site.data.langs['en'].week_1 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_2 | default: site.data.langs['en'].week_2 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_3 | default: site.data.langs['en'].week_3 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_4 | default: site.data.langs['en'].week_4 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_5 | default: site.data.langs['en'].week_5 }}<td class="card-subtitle text-muted">{{ site.data.langs[page.lang].week_6 | default: site.data.langs['en'].week_6 }}
-                    <tbody class="card-body">
-                </table>
-    </table>
-    <div class="text-left">{{ site.data.langs[page.lang].add_date | default: site.data.langs['en'].add_date }}</div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
 </div>
 
 <div id="calendarTable">
-    {%- for page_date in site.data.dates -%}
+    {%- for dates in site.posts -%}
         {%- if page.url == '/' -%}
             {%- assign page_lang = 'en' -%}
         {%- else -%}
             {%- assign page_lang = page.lang -%}
         {%- endif -%}
-        {%- if page_date[1].board == page_lang or page_date[1].board == null -%}
-            {%- assign pagedate2 = page_date[1].date | date: '%e' -%}
-    <div data-dd="{{ pagedate2 | split: ' ' }}" data-mm="{{ page_date[1].date | date: '%m' }}"{% unless page_date[1].year == false %} data-yyyy="{{ page_date[1].date | date: '%Y' }}"{% endunless %} data-class="{{ page_date[1].class }}" data-text="{{ page_date[1].text }}"{% if page_date[1].link %} data-link="{{ page_date[1].link }}"{% endif %}{% if page_date[1].badge %} data-badge="{{ page_date[1].badge }}"{% endif %}{% if page_date[1].delay %} data-delay="{{ page_date[1].delay }}"{% endif %}></div>
+        {%- if dates.slug == page_lang or dates.slug == null -%}
+            {%- include config.html item1=dates.date -%}
+    <div data-dd="{{ dates.date | date: '%e' | strip }}" data-mm="{{ dates.date | date: '%m' }}"{% unless dates.year == false %} data-yyyy="{{ dates.date | date: '%Y' }}"{% endunless %} data-date="📆{{ dates.date | date: ' %d, %Y' | prepend: m_config2 }}" data-text="• {{ dates.title }}" data-link="{{ dates.url | relative_url }}"></div>
         {%- endif -%}
     {%- endfor -%}
 </div>
@@ -120,39 +54,22 @@ var D = new Date(year,[m],1),
         Dlast = new Date(D.getFullYear(),D.getMonth()+1,0).getDate(),
         DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
         DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
-        calendar = '<tr>';
+        calendar = '<tr class="d-flex justify-content-around">';
 
 if (DNfirst != 0) {
-    for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
-}else{
-    for(var  i = 0; i < 6; i++) calendar += '<td>';
+    for (var  i = 1; i < DNfirst; i++) calendar += '<td class="px-0">';
+} else {
+    for (var  i = 0; i < 6; i++) calendar += '<td class="px-0">';
 }
 
-for(var  i = 1; i <= Dlast; i++) {
+for (var  i = 1; i <= Dlast; i++) {
     if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-        calendar += '<td class="badge badge-pill badge-primary" style="cursor: help;" data-toggle="tooltip" title="{{ site.data.langs[page.lang].today | default: site.data.langs["en"].today }}">' + i;
-    }else{
-        /*if (
-                (i == 1 && D.getMonth() == 0 && ((D.getFullYear() > 1897 && D.getFullYear() < 1930) || D.getFullYear() > 1947)) ||
-                (i == 2 && D.getMonth() == 0 && D.getFullYear() > 1992) ||
-                ((i == 3 || i == 4 || i == 5 || i == 6 || i == 8) && D.getMonth() == 0 && D.getFullYear() > 2004) ||
-                (i == 7 && D.getMonth() == 0 && D.getFullYear() > 1990) ||
-                (i == 23 && D.getMonth() == 1 && D.getFullYear() > 2001) ||
-                (i == 8 && D.getMonth() == 2 && D.getFullYear() > 1965) ||
-                (i == 1 && D.getMonth() == 4 && D.getFullYear() > 1917) ||
-                (i == 9 && D.getMonth() == 4 && D.getFullYear() > 1964) ||
-                (i == 12 && D.getMonth() == 5 && D.getFullYear() > 1990) ||
-                (i == 7 && D.getMonth() == 10 && (D.getFullYear() > 1926 && D.getFullYear() < 2005)) ||
-                (i == 8 && D.getMonth() == 10 && (D.getFullYear() > 1926 && D.getFullYear() < 1992)) ||
-                (i == 4 && D.getMonth() == 10 && D.getFullYear() > 2004)
-             ) {
-            calendar += '<td class="text-danger">' + i;
-        }else{*/
-            calendar += '<td>' + i;
-        /*}*/
+        calendar += '<td class="font-weight-bold text-info px-0" style="cursor: help;" data-toggle="tooltip" title="{{ site.data.langs[page.lang].today | default: site.data.langs["en"].today }}">' + i;
+    } else {
+        calendar += '<td class="px-0">' + i;
     }
     if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-        calendar += '<tr>';
+        calendar += '<tr class="d-flex justify-content-around">';
     }
 }
 
@@ -161,9 +78,9 @@ if (DNlast != 0) {
 }
 
 document.querySelector('#calendarBig table[data-m="' + [m] + '"] tbody').innerHTML = calendar;
-document.querySelector('#calendarBig > thead td:nth-child(2)').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }}' + year + '{{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
-document.querySelector('#calendarBig > thead td:nth-child(1)').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }}' + parseFloat(parseFloat(year)-1) + '{{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
-document.querySelector('#calendarBig > thead td:nth-child(3)').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }}' + parseFloat(parseFloat(year)+1) + '{{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
+document.querySelector('#calendarBig > #now').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }} ' + year + ' {{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
+document.querySelector('#calendarBig > #prev').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }} ' + parseFloat(parseFloat(year)-1) + ' {{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
+document.querySelector('#calendarBig > #next').innerHTML = '{{ site.data.langs[page.lang].calendar_on_1 | default: site.data.langs["en"].calendar_on_1 }} ' + parseFloat(parseFloat(year)+1) + ' {{ site.data.langs[page.lang].calendar_on_2 | default: site.data.langs["en"].calendar_on_2 }}';
 
 for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++) {
     var myD = document.querySelectorAll('#calendarBig table td'),
@@ -171,39 +88,29 @@ for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++
     for (var i = 0; i < myD.length; i++) {
         if (my.dataset.yyyy) {
             if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
-                myD[i].title = my.dataset.text
-                myD[i].className = "font-weight-bold text-";
-                myD[i].className += my.dataset.class;
+                myD[i].title = my.dataset.text;
+                myD[i].className = "font-weight-bold text-dark px-0";
                 myD[i].dataset.toggle = "tooltip";
                 myD[i].dataset.html = "true";
                 myD[i].setAttribute("style", "cursor: help;");
-                if (my.dataset.delay == "true") {
-                    myD[i].dataset.delay = '{ "hide": 2000 }';
-                }
+                myD[i].dataset.delay = '{ "hide": 2000 }';
                 if (my.dataset.link) {
-                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white" target="_blank">' + myD[i].title + '</a>';
+                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white">' + myD[i].title + '</a>';
                 }
-                if (my.dataset.badge) {
-                    myD[i].title = '<span class="badge badge-light">' + my.dataset.badgetext+ '</span> ' + myD[i].title;
-                }
+                myD[i].title = my.dataset.date + '<br>' + myD[i].title;
             }
-        }else{
+        } else {
             if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1)) {
-                myD[i].title = my.dataset.text
-                myD[i].className = "font-weight-bold text-";
-                myD[i].className += my.dataset.class;
+                myD[i].title = my.dataset.text;
+                myD[i].className = "font-weight-bold text-dark px-0";
                 myD[i].dataset.toggle = "tooltip";
                 myD[i].dataset.html = "true";
                 myD[i].setAttribute("style", "cursor: help;");
-                if (my.dataset.delay == "true") {
-                    myD[i].dataset.delay = '{ "hide": 2000 }';
-                }
+                myD[i].dataset.delay = '{ "hide": 2000 }';
                 if (my.dataset.link) {
-                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white" target="_blank">' + myD[i].title + '</a>';
+                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white">' + myD[i].title + '</a>';
                 }
-                if (my.dataset.badge) {
-                    myD[i].title = '<span class="badge badge-light">' + my.dataset.badge+ '</span> ' + myD[i].title;
-                }
+                myD[i].title = my.dataset.date + '<br>' + myD[i].title;
             }
         }
     }
@@ -212,8 +119,8 @@ for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++
 }}
 
 calendarBig(new Date().getFullYear());
-document.querySelector('#calendarBig > thead td:nth-child(1)').onclick = calendarBigG;
-document.querySelector('#calendarBig > thead td:nth-child(3)').onclick = calendarBigG;
+document.querySelector('#calendarBig > #prev').onclick = calendarBigG;
+document.querySelector('#calendarBig > #next').onclick = calendarBigG;
 function calendarBigG() {calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));}
 
 </script>
