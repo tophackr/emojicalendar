@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+{%- include config.html item1=page.date -%}
+<h1>{{ page.title }}</h1>
+<div class="row justify-content-center">
+    <div class="col-12">
+        <ul class="float-left list-inline">
+            <li class="list-inline-item">📆{{ page.date | date: ' %d, %Y' | prepend: m_config2 }}</li>
+            {%- if page.author -%}
+            <li class="list-inline-item">
+                <img src="https://www.gravatar.com/avatar/{{ page.author.email | remove: ' ' | strip_newlines | downcase | md5 }}?d=retro" class="rounded align-text-top" width="20" height="20">
+                <a href="{{ page.author.email | prepend: 'mailto:' }}">{{ page.author.name }}</a>
+            </li>
+            {%- endif -%}
+            {%- if page.category -%}
+            <li class="list-inline-item">📁{{ page.category | join: ', ' }}</li>
+            {%- endif -%}
+        </ul>
+        <div class="float-right ya-share2" data-services="facebook,twitter,vkontakte,telegram,whatsapp,viber,skype,linkedin,tumblr,reddit,blogger,lj" data-limit="4" data-lang="{{ page.slug }}"></div>
+    </div>
+</div>
+{{ content }}
