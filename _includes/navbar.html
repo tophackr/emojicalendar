@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container">
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">📅 {{ site.data.langs[page.lang].sitename | default: site.data.langs['en'].sitename }}</a>
+        {%- if page.lang -%}
+            {%- assign url_navbar = page.lang -%}
+        {%- elsif page.slug -%}
+            {%- assign url_navbar = page.slug -%}
+        {%- else -%}
+            {%- assign url_navbar = 'en' -%}
+        {%- endif -%}
+        <a class="navbar-brand" href="{{ site.data.langs[url_navbar].icon | append: '/' | relative_url }}">📅 {{ site.data.langs[url_navbar].sitename }}</a>
 
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tophackr-navbar" aria-controls="tophackr-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,25 +15,28 @@
 
         <div class="navbar-collapse collapse" id="tophackr-navbar">
             <ul class="navbar-nav">
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{{ '📣' | append: '/' | relative_url }}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].ad }}">📣</a>
+                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/📣' | relative_url }}" data-toggle="tooltip" title="{{ site.data.langs[page.lang].ad | default: site.data.langs['en'].ad }}">📣</a>
+                    <a class="nav-link" href="{{ '➕' | append: '/' | relative_url }}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].add_date }}">➕</a>
                 </li>
             </ul>
         </div>
         <ul class="navbar-nav ml-md-auto d-none d-lg-flex">
             <li class="nav-item">
-                <a class="nav-link p-2" href="mailto:tophackr@icloud.com" target="_blank" rel="noopener" data-toggle="tooltip" title="{{ site.data.langs[page.lang].contact_us | default: site.data.langs['en'].contact_us }}" aria-label="Email">📧</a>
+                <a class="nav-link p-2" href="mailto:tophackr@icloud.com" target="_blank" rel="noopener" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].contact_us }}" aria-label="Email">📧</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="calendarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ site.data.langs[page.lang].icon | default: site.data.langs['en'].icon }}
+                  {{ site.data.langs[url_navbar].icon }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="calendarDropdown">
                     {%- for language in site.data.langs -%}
-                    <a class="dropdown-item" href="/{{ language[1].icon }}">{{ language[1].icon | append: language[1].name }}</a>
+                    <a class="dropdown-item{% if language[0] == url_navbar %} active{% endif %}" href="{{ language[1].icon | append: '/' | relative_url }}">{{ language[1].icon | append: language[1].name }}</a>
                     {%- endfor -%}
-                    <!--<div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">{{ site.data.langs[page.lang].translate | default: site.data.langs['en'].translate }}</a>-->
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item disabled" href="#">{{ site.data.langs[url_navbar].translate }}</a>
                 </div>
             </li>
         </ul>
