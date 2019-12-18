@@ -11,4 +11,6 @@ image:
 markdown: kramdown
 timezone: Europe/Moscow
 encoding: utf-8
+permalink: pretty
+future: true
 #exclude: ['.gitignore']
