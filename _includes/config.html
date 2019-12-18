@@ -1,0 +1,61 @@
+
+{% comment %}
+<!--
+#
+# Translate month
+#
+-->
+{% endcomment %}
+
+{%- assign m_config = include.item1 | date: "%-m" -%}
+{%- if page.lang -%}
+    {%- assign url_config = page.lang -%}
+{%- elsif page.slug -%}
+    {%- assign url_config = page.slug -%}
+{%- else -%}
+    {%- assign url_config = 'en' -%}
+{%- endif -%}
+{%- capture m_config2 -%}
+    {%- case m_config -%}
+            {%- when  '1' -%}{{ site.data.langs[url_config].month_0_1 }}
+            {%- when  '2' -%}{{ site.data.langs[url_config].month_1_1 }}
+            {%- when  '3' -%}{{ site.data.langs[url_config].month_2_1 }}
+            {%- when  '4' -%}{{ site.data.langs[url_config].month_3_1 }}
+            {%- when  '5' -%}{{ site.data.langs[url_config].month_4_1 }}
+            {%- when  '6' -%}{{ site.data.langs[url_config].month_5_1 }}
+            {%- when  '7' -%}{{ site.data.langs[url_config].month_6_1 }}
+            {%- when  '8' -%}{{ site.data.langs[url_config].month_7_1 }}
+            {%- when  '9' -%}{{ site.data.langs[url_config].month_8_1 }}
+            {%- when '10' -%}{{ site.data.langs[url_config].month_9_1 }}
+            {%- when '11' -%}{{ site.data.langs[url_config].month_10_1 }}
+            {%- when '12' -%}{{ site.data.langs[url_config].month_11_1 }}
+    {%- endcase -%}
+{%- endcapture -%}
+
+{% comment %}
+<!--
+#
+# Translate week
+#
+-->
+{% endcomment %}
+
+{%- assign w_config = include.item1 | date: "%u" -%}
+{%- if page.lang -%}
+    {%- assign url_config = page.lang -%}
+{%- elsif page.slug -%}
+    {%- assign url_config = page.slug -%}
+{%- else -%}
+    {%- assign url_config = 'en' -%}
+{%- endif -%}
+{%- capture w_config2 -%}
+    {%- case w_config -%}
+            {%- when  '1' -%}{{ site.data.langs[url_config].week_0_1 }}
+            {%- when  '2' -%}{{ site.data.langs[url_config].week_1_1 }}
+            {%- when  '3' -%}{{ site.data.langs[url_config].week_2_1 }}
+            {%- when  '4' -%}{{ site.data.langs[url_config].week_3_1 }}
+            {%- when  '5' -%}{{ site.data.langs[url_config].week_4_1 }}
+            {%- when  '6' -%}{{ site.data.langs[url_config].week_5_1 }}
+            {%- when  '7' -%}{{ site.data.langs[url_config].week_6_1 }}
+    {%- endcase -%}
+{%- endcapture -%}
