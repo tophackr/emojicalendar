@@ -15,10 +15,11 @@ layout: page
             </li>
             {%- endif -%}
             {%- if page.category -%}
-            <li class="list-inline-item">📁{{ page.category | join: ', ' }}</li>
+            <li class="list-inline-item">🗂️{{ page.category | join: ', ' }}</li>
             {%- endif -%}
         </ul>
         <div class="float-right ya-share2" data-services="facebook,twitter,vkontakte,telegram,whatsapp,viber,skype,linkedin,tumblr,reddit,blogger,lj" data-limit="4" data-lang="{{ page.slug }}"></div>
     </div>
 </div>
 {{ content }}
+<div id="commento"></div>
