@@ -9,11 +9,11 @@
         {%- endif -%}
         <a class="navbar-brand" href="{{ site.data.langs[url_navbar].icon | append: '/' | relative_url }}">📅 {{ site.data.langs[url_navbar].sitename }}</a>
 
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tophackr-navbar" aria-controls="tophackr-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#calendar-navbar" aria-controls="tophackr-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse" id="tophackr-navbar">
+        <div class="navbar-collapse collapse" id="calendar-navbar">
             <ul class="navbar-nav">
                 <!--<li class="nav-item">
                     <a class="nav-link" href="{{ '📣' | append: '/' | relative_url }}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].ad }}">📣</a>
@@ -27,8 +27,8 @@
                     <a class="nav-link" href="mailto:tophackr@icloud.com" target="_blank" rel="noopener" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].contact_us }}" aria-label="Email">📮<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].contact_us }}</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="calendarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ site.data.langs[url_navbar].icon }}<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].change_lang }}</span></a>
-                    <div class="dropdown-menu" aria-labelledby="calendarDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ site.data.langs[url_navbar].icon }}<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].change_lang }}</span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {%- for language in site.data.langs -%}
                         <a class="dropdown-item{% if language[0] == url_navbar %} active{% endif %}" href="{{ language[1].icon | append: '/' | relative_url }}">{{ language[1].icon | append: language[1].name }}</a>
                         {%- endfor -%}
