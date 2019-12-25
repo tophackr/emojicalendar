@@ -22,4 +22,20 @@ layout: page
     </div>
 </div>
 {{ content }}
-<div id="commento"></div>
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+    {%- assign url_date = page.url | split: "/" | last -%}
+    {%- assign url_date2 = url_date | prepend: '/' | prepend: page.slug | prepend: '/' | append: '/' -%}
+    this.page.url = '{{ 'https://xn--et8h.ml' | append: page.url | relative_url }}';
+    this.page.identifier = '{{ url_date2 | relative_url }}';
+    this.language = '{{ page.slug }}';
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://emoji-calendar.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments.</noscript>
