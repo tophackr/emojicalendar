@@ -1,4 +1,22 @@
 # Changelog
+## [v2.1] - 2019.12.27
+### Added
+- Comment block by [disqus](http://disqus.com)  
+- Google Analytics  
+- New lines to lang files
+
+### Changed
+- Add date emoji  
+- Email emoji  
+- Category emoji
+
+### Fixed
+- Right block for mobile version, now is visible  
+- Large indent on the page layout
+
+### Removed
+- Unnecessary types from js, css
+
 ## [v2.0.1] - 2019.12.18
 ### Removed
 - `LICENSE` from `public_html`  
@@ -31,6 +49,7 @@
 
 - First release
 
+[v2.1]: https://gitlab.com/tophackr/calendar/compare/v2.0.1-r...v2.1-r
 [v2.0.1]: https://gitlab.com/tophackr/calendar/compare/v2.0-r...v2.0.1-r
 [v2.0]: https://gitlab.com/tophackr/calendar/compare/v1.0-r...v2.0-r
 [v1.0]: https://gitlab.com/tophackr/calendar/compare/9e551822...v1.0-r
