@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="row justify-content-center my-5">
-    <div class="col-md-10">
+    <div class="col-lg-12 col-xl-10">
         
         <div id="calendarBig" class="row">
             <div id="prev" class="btn-link text-center col-sm-12 col-md-12 col-lg-3" style="cursor: pointer;"></div>
@@ -17,7 +17,7 @@ layout: default
                         <tr class="d-flex flex-column">
                             <td class="h6 card-title text-center mb-0" colspan="7">{{ site.data.langs[page.lang][months1] | default: site.data.langs['en'][months1] }}</td>
                         </tr>
-                        <tr class="d-flex justify-content-around">
+                        <tr id="caledarGrid" class="d-flex justify-content-around text-center">
                             {%- for weeks in (0..6) -%}
                             {%- assign weeks1 = 'week_' | append: weeks -%}
                             <td class="card-subtitle text-muted px-0">{{ site.data.langs[page.lang][weeks1] | default: site.data.langs['en'][weeks1] }}</td>
@@ -53,7 +53,7 @@ var D = new Date(year,[m],1),
         Dlast = new Date(D.getFullYear(),D.getMonth()+1,0).getDate(),
         DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
         DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
-        calendar = '<tr class="d-flex justify-content-around">';
+        calendar = '<tr id="caledarGrid" class="d-flex justify-content-around text-center">';
 
 if (DNfirst != 0) {
     for (var  i = 1; i < DNfirst; i++) calendar += '<td class="px-0">';
@@ -68,7 +68,7 @@ for (var  i = 1; i <= Dlast; i++) {
         calendar += '<td class="px-0">' + i;
     }
     if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-        calendar += '<tr class="d-flex justify-content-around">';
+        calendar += '<tr id="caledarGrid" class="d-flex justify-content-around text-center">';
     }
 }
 
@@ -87,29 +87,31 @@ for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++
     for (var i = 0; i < myD.length; i++) {
         if (my.dataset.yyyy) {
             if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
-                myD[i].title = my.dataset.text;
                 myD[i].className = "font-weight-bold text-dark px-0";
-                myD[i].dataset.toggle = "tooltip";
-                myD[i].dataset.html = "true";
-                myD[i].setAttribute("style", "cursor: help;");
-                myD[i].dataset.delay = '{ "hide": 2000 }';
+                myD[i].dataset.toggle = "popover";
+                myD[i].title = '<span class="text-center">' + my.dataset.date + '</span>';
+                myD[i].dataset.content = my.dataset.text;
                 if (my.dataset.link) {
-                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white">' + myD[i].title + '</a>';
+                    myD[i].dataset.content = '<a href="' + my.dataset.link + '">' + myD[i].dataset.content + '</a>';
                 }
-                myD[i].title = my.dataset.date + '<br>' + myD[i].title;
+                myD[i].dataset.delay = '{ "hide": 2000 }';
+                myD[i].dataset.html = "true";
+                myD[i].dataset.trigger = "hover";
+                myD[i].setAttribute("style", "cursor: help;");
             }
         } else {
             if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1)) {
-                myD[i].title = my.dataset.text;
                 myD[i].className = "font-weight-bold text-dark px-0";
-                myD[i].dataset.toggle = "tooltip";
-                myD[i].dataset.html = "true";
-                myD[i].setAttribute("style", "cursor: help;");
-                myD[i].dataset.delay = '{ "hide": 2000 }';
+                myD[i].dataset.toggle = "popover";
+                myD[i].title = '<span class="text-center">' + my.dataset.date + '</span>';
+                myD[i].dataset.content = my.dataset.text;
                 if (my.dataset.link) {
-                    myD[i].title = '<a href="' + my.dataset.link + '" class="text-white">' + myD[i].title + '</a>';
+                    myD[i].dataset.content = '<a href="' + my.dataset.link + '">' + myD[i].dataset.content + '</a>';
                 }
-                myD[i].title = my.dataset.date + '<br>' + myD[i].title;
+                myD[i].dataset.delay = '{ "hide": 2000 }';
+                myD[i].dataset.html = "true";
+                myD[i].dataset.trigger = "hover";
+                myD[i].setAttribute("style", "cursor: help;");
             }
         }
     }
