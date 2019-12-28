@@ -29,6 +29,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ site.data.langs[url_navbar].icon }}<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].change_lang }}</span></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <h6 class="dropdown-header d-none d-lg-block d-xl-block">{{ site.data.langs[url_navbar].change_lang }}</h6>
                         {%- for language in site.data.langs -%}
                         <a class="dropdown-item{% if language[0] == url_navbar %} active{% endif %}" href="{{ language[1].icon | append: '/' | relative_url }}">{{ language[1].icon | append: language[1].name }}</a>
                         {%- endfor -%}
