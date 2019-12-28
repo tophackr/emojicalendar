@@ -14,9 +14,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
 
-    <style>
-        #calendarBig table tbody td:nth-child(n+6) { color: #ffc107; }
-    </style>
+    {%- if page.layout == 'calendar' -%}
+    <style>#calendarBig table tbody td:nth-child(n+6){color: #ffc107;}#caledarGrid>td{width:27px;}</style>
+    {%- endif %}
 
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
 
