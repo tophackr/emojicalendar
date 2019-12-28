@@ -2,12 +2,12 @@
 <footer class="container font-weight-light my-5">
     <div class="row">
         <div class="col-md-12">
-            <a class="float-left dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change domain</a>
+            <!-- <a class="float-left dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change domain</a>
             <div class="dropdown-menu" aria-labelledby="footerDropdown">
                 {%- for domain_footer in site.data.domains -%}
                 <a class="dropdown-item" href="{{ domain_footer | prepend: 'https://' }}">{{ domain_footer }}</a>
                 {%- endfor -%}
-            </div>
+            </div> -->
             <span class="float-right">
                 <a href="https://tophackr.com" class="text-dark">tophackr</a> &copy; {{ 'now' | date: '%Y' }}
             </span>
@@ -18,4 +18,4 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript">$('[data-toggle="tooltip"]').tooltip();</script>
+<script type="text/javascript">$(function(){$('[data-toggle="tooltip"]').tooltip();$('[data-toggle="popover"]').popover();})</script>
