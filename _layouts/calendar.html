@@ -140,6 +140,7 @@ function updateURLprev() {
     var newUrl = baseUrl + '#' + (parseInt(yeaR) - 1);
     history.pushState(null, null, newUrl);
     calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));
+    $('[data-toggle="popover"]').popover('update');
 }
 function updateURLnext() {
     var wlh = window.location.hash.replace('#', '');
@@ -151,6 +152,7 @@ function updateURLnext() {
     var newUrl = baseUrl + '#' + (parseInt(yeaR) + 1);
     history.pushState(null, null, newUrl);
     calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));
+    $('[data-toggle="popover"]').popover('update');
 }
 // endtrash
 
