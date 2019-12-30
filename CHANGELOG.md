@@ -1,4 +1,20 @@
 # Changelog
+## [v2.2] - 2019.12.30
+### Added
+- Title for language navbar dropdown
+- Yandex Analytics
+- Lines in `_config.yml` for Google, Yandex Analytics
+
+### Changed
+- Tooltips dates to popover
+- Some links to new format
+- Adapted pages for url
+
+### Fixed
+- Uneven grid for calendar layout
+- Size for mobile and small monitors
+- Popover (tooltip) for other years
+
 ## [v2.1] - 2019.12.27
 ### Added
 - Comment block by [disqus](http://disqus.com)  
@@ -49,7 +65,8 @@
 
 - First release
 
-[v2.1]: https://gitlab.com/tophackr/calendar/compare/v2.0.1-r...v2.1-r
-[v2.0.1]: https://gitlab.com/tophackr/calendar/compare/v2.0-r...v2.0.1-r
-[v2.0]: https://gitlab.com/tophackr/calendar/compare/v1.0-r...v2.0-r
-[v1.0]: https://gitlab.com/tophackr/calendar/compare/9e551822...v1.0-r
+[v2.2]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.1-r...v2.2-r
+[v2.1]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.0.1-r...v2.1-r
+[v2.0.1]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.0-r...v2.0.1-r
+[v2.0]: https://gitlab.com/tophackr/EmojiCalendar/compare/v1.0-r...v2.0-r
+[v1.0]: https://gitlab.com/tophackr/EmojiCalendar/compare/9e551822...v1.0-r
