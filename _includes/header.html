@@ -18,9 +18,12 @@
     <style>#calendarBig table tbody td:nth-child(n+6){color: #ffc107;}#caledarGrid>td{width:27px;}</style>
     {%- endif %}
 
-    <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% link favicon.ico %}" type="image/x-icon">
+
+    {% include social.html %}
 
     {% include analytics.html %}
+
     {%- if page.slug -%}
     <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
     <script src="https://yastatic.net/share2/share.js"></script>
