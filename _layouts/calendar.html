@@ -29,6 +29,7 @@ layout: default
             </div>
             {%- endfor -%}
         </div>
+
     </div>
 </div>
 
@@ -119,9 +120,41 @@ for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++
 
 }}
 
-calendarBig(new Date().getFullYear());
-document.querySelector('#calendarBig > #prev').onclick = calendarBigG;
-document.querySelector('#calendarBig > #next').onclick = calendarBigG;
-function calendarBigG() {calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));}
+// trash
+var baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
 
+var wlh = window.location.hash.replace('#', '');
+if (parseInt(wlh)) {
+    var yeaR = parseInt(wlh);
+} else {
+    var yeaR = new Date().getFullYear();
+}
+
+function updateURLprev() {
+    var wlh = window.location.hash.replace('#', '');
+    if (parseInt(wlh)) {
+        var yeaR = parseInt(wlh);
+    } else {
+        var yeaR = new Date().getFullYear();
+    }
+    var newUrl = baseUrl + '#' + (parseInt(yeaR) - 1);
+    history.pushState(null, null, newUrl);
+    calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));
+}
+function updateURLnext() {
+    var wlh = window.location.hash.replace('#', '');
+    if (parseInt(wlh)) {
+        var yeaR = parseInt(wlh);
+    } else {
+        var yeaR = new Date().getFullYear();
+    }
+    var newUrl = baseUrl + '#' + (parseInt(yeaR) + 1);
+    history.pushState(null, null, newUrl);
+    calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));
+}
+// endtrash
+
+calendarBig(yeaR);
+document.querySelector('#calendarBig > #prev').onclick = updateURLprev;
+document.querySelector('#calendarBig > #next').onclick = updateURLnext;
 </script>
