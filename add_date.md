@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: '/🗓/'
 ---
 
 <div class="d-flex justify-content-center">

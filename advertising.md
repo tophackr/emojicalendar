@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: '/📣/'
 ---
 
 # Advertising in the calendar
