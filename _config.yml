@@ -16,4 +16,4 @@ timezone: Europe/Moscow
 encoding: utf-8
 permalink: pretty
 future: true
-exclude: ['LICENSE', 'CHANGELOG.md']
+exclude: ['LICENSE', 'CHANGELOG.md', 'README.md']
