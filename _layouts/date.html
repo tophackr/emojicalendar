@@ -11,7 +11,7 @@ layout: page
     <div class="col-12">
 
         <div class="d-flex flex-column flex-md-row">
-            <div class="mb-2 pr-3">📆{{ page.date | date: ' %d, %Y' | prepend: m_config2 }}</div>
+            <div class="mb-2 pr-3">📆 {{ page.date | date: ' %d, %Y' | prepend: m_config2 }}</div>
             {%- if page.author -%}
             <div class="mb-2 pr-3">
                 <img src="https://www.gravatar.com/avatar/{{ page.author.email | remove: ' ' | strip_newlines | downcase | md5 }}?d=retro" class="rounded align-text-top" width="20" height="20">
@@ -19,7 +19,7 @@ layout: page
             </div>
             {%- endif -%}
             {%- if page.category -%}
-            <div class="mb-3 pr-3">🗂️{{ page.category | join: ', ' }}</div>
+            <div class="mb-3 pr-3">🗂️ {{ page.category | join: ', ' }}</div>
             {%- endif -%}
             <div class="mb-3 ml-md-auto ya-share2" data-services="facebook,twitter,vkontakte,telegram,whatsapp,viber,skype,linkedin,tumblr,reddit,blogger,lj" data-limit="4" data-lang="{{ page.slug }}"></div>
         </div>
