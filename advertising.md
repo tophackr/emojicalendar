@@ -7,10 +7,10 @@ permalink: '/📣/'
 {: .text-center }
 
 You can buy ads on a date in the calendar:
-![](/assets/p8nsxjh4.png){: .img-fluid }
+![](/assets/advertising/8514601452706178.png){: .img-fluid }
 
 or buy a custom banner background
-![](/assets/h6cyt9bk.png){: .img-fluid }
+![](/assets/advertising/5874549548011998.png){: .img-fluid }
 
 ---
 
