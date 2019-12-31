@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container">
+
         {%- if page.lang -%}
             {%- assign url_navbar = page.lang -%}
         {%- elsif page.slug -%}
@@ -7,6 +8,7 @@
         {%- else -%}
             {%- assign url_navbar = 'en' -%}
         {%- endif -%}
+
         <a class="navbar-brand" href="{{ site.data.langs[url_navbar].icon | append: '/' | relative_url }}">📅 {{ site.data.langs[url_navbar].sitename }}</a>
 
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#calendar-navbar" aria-controls="tophackr-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +16,7 @@
         </button>
 
         <div class="navbar-collapse collapse" id="calendar-navbar">
+
             <ul class="navbar-nav">
                 <!--<li class="nav-item">
                     <a class="nav-link" href="{% link advertising.md %}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].ad }}">📣</a>
@@ -22,6 +25,7 @@
                     <a class="nav-link" href="{% link add_date.md %}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].add_date }}">🗓<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].add_date }}</span></a>
                 </li>
             </ul>
+
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="mailto:tophackr@icloud.com" target="_blank" rel="noopener" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].contact_us }}" aria-label="Email">📮<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].contact_us }}</span></a>
@@ -38,7 +42,8 @@
                     </div>
                 </li>
             </ul>
-        </div>
-        
-    </div>
+
+        </div><!-- /#calendar-navbar -->
+
+    </div><!-- /.container -->
 </nav>

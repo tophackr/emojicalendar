@@ -1,13 +1,20 @@
 
 <!DOCTYPE html>
 <html>
+
 {% include header.html %}
+
 <body>{% comment %}<!-- {% if page.url == '/' %} style="background: url('{{ '/assets/banner.webp' | relative_url }}') no-repeat center center fixed; background-size: 100%" style="background-image: url('{{ site.image.background | relative_url }}');"{% endif %} -->{% endcomment %}
+
     {% include navbar.html %}
+
     <div class="container-fluid">
+
         <div class="row justify-content-center my-5">
             <div class="col-md-10">
+
                 <div class="card-group">
+
                     {%- if page.lang -%}
                         {%- assign url_default = page.lang -%}
                     {%- elsif page.slug -%}
@@ -19,6 +26,7 @@
                     {%- assign now_default2 = 'now' | date: '%s' | minus: 86400 -%}
                     {%- assign now_default3 = 'now' | date: '%s' | plus: 86400 -%}
                     {%- capture year_default -%}{{ site.data.langs[url_default].calendar_on_3 }}{%- endcapture -%}
+
                     <div class="card border-warning">
                         <div class="card-header bg-warning">{{ site.data.langs[url_default].yesterday }}</div>
                         <div class="card-body">
@@ -39,6 +47,7 @@
                             {%- endfor -%}
                         </div>
                     </div>
+
                     <div class="card border-warning">
                         <div class="card-header bg-warning">{{ site.data.langs[url_default].today }}</div>
                         <div class="card-body">
@@ -59,6 +68,7 @@
                             {%- endfor -%}
                         </div>
                     </div>
+
                     <div class="card border-warning">
                         <div class="card-header bg-warning">{{ site.data.langs[url_default].tomorrow }}</div>
                         <div class="card-body">
@@ -79,11 +89,17 @@
                             {%- endfor -%}
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+
+                </div><!-- /.card-group -->
+
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
         {{ content }}
-    </div>
+
+    </div><!-- /.container -->
+
     {% include footer.html %}
+
 </body>
 </html>
