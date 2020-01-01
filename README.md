@@ -5,4 +5,4 @@
 If you have any problems, you can [open a new issue](https://gitlab.com/tophackr/EmojiCalendar/issues/new) or write an [email](mailto:tophackr@icloud.com).
 
 ## Copyright and license
-Code copyright 2019 the [Emoji Calendar authors](https://gitlab.com/tophackr/EmojiCalendar/-/graphs/master). Code released under the [MIT License](https://gitlab.com/tophackr/EmojiCalendar/blob/master/LICENSE).
+Code copyright 2020 the [Emoji Calendar authors](https://gitlab.com/tophackr/EmojiCalendar/-/graphs/master). Code released under the [MIT License](https://gitlab.com/tophackr/EmojiCalendar/blob/master/LICENSE).
