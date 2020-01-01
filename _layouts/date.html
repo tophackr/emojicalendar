@@ -5,7 +5,7 @@ layout: page
 {%- include config.html item1=page.date -%}
 <img src="{{ page.image | relative_url }}" class="img-fluid rounded" alt="Responsive image">
 <hr>
-<h1 class="page__title">{{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
 
 <div class="row justify-content-center">
     <div class="col-12">
@@ -26,9 +26,8 @@ layout: page
 
     </div>
 </div>
-<div class="page__content">
-    {{ content }}
-</div>
+
+{{ content }}
 
 <div id="disqus_thread"></div>
 <script>
