@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ page.description | default: site.description | smartify }}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.title %}{{ page.excerpt | strip_html | smartify }}{% else %}{{ site.description | smartify }}{% endif %}">
     <meta name="author" content="{{ page.author.name | default: 'tophackr' }}">
 
     <title>

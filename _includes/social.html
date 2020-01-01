@@ -4,13 +4,13 @@
 <meta name="twitter:site" content="@{{ site.twitter }}">
 <meta name="twitter:creator" content="@{{ page.author.twitter | default: site.twitter }}">
 <meta name="twitter:title" content="{{ page.title | default: site.title | smartify }}">
-<meta name="twitter:description" content="{% if page.title %}{{ page.excerpt | strip_html | smartify }}{% else %}{{ site.description | smartify }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.title %}{{ page.excerpt | strip_html | smartify }}{% else %}{{ site.description | smartify }}{% endif %}">
 <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.image.large | absolute_url }}{% endif %}">
 
 <!-- Facebook -->
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:title" content="{{ page.title | default: site.title | smartify }}">
-<meta property="og:description" content="{% if page.title %}{{ page.excerpt | strip_html | smartify }}{% else %}{{ site.description | smartify }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.title %}{{ page.excerpt | strip_html | smartify }}{% else %}{{ site.description | smartify }}{% endif %}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.image.large | absolute_url }}{% endif %}">
 <meta property="og:image:secure_url" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.image.large | absolute_url }}{% endif %}">
