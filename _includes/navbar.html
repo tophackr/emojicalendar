@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{% link advertising.md %}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].ad }}">📣</a>
                 </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% link add_date.md %}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].add_date }}">🗓<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].add_date }}</span></a>
+                    <a class="nav-link" href="{{ site.data.langs[url_navbar].icon | append: '/🗓/' | relative_url }}" data-toggle="tooltip" title="{{ site.data.langs[url_navbar].add_date }}">🗓<span class="d-lg-none d-xl-none"> {{ site.data.langs[url_navbar].add_date }}</span></a>
                 </li>
             </ul>
 
