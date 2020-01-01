@@ -1,4 +1,20 @@
 
+
+{% comment %}
+<!--
+#
+# Assignment lang
+#
+-->
+{% endcomment %}
+{%- if page.lang -%}
+    {%- assign url_config = page.lang -%}
+{%- elsif page.slug -%}
+    {%- assign url_config = page.slug -%}
+{%- else -%}
+    {%- assign url_config = 'en' -%}
+{%- endif -%}
+
 {% comment %}
 <!--
 #
@@ -8,13 +24,6 @@
 {% endcomment %}
 
 {%- assign m_config = include.item1 | date: "%-m" -%}
-{%- if page.lang -%}
-    {%- assign url_config = page.lang -%}
-{%- elsif page.slug -%}
-    {%- assign url_config = page.slug -%}
-{%- else -%}
-    {%- assign url_config = 'en' -%}
-{%- endif -%}
 {%- capture m_config2 -%}
     {%- case m_config -%}
             {%- when  '1' -%}{{ site.data.langs[url_config].month_0_1 }}
@@ -41,13 +50,6 @@
 {% endcomment %}
 
 {%- assign w_config = include.item1 | date: "%u" -%}
-{%- if page.lang -%}
-    {%- assign url_config = page.lang -%}
-{%- elsif page.slug -%}
-    {%- assign url_config = page.slug -%}
-{%- else -%}
-    {%- assign url_config = 'en' -%}
-{%- endif -%}
 {%- capture w_config2 -%}
     {%- case w_config -%}
             {%- when  '1' -%}{{ site.data.langs[url_config].week_0_1 }}
