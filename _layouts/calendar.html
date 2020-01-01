@@ -39,7 +39,7 @@ layout: default
 <div id="calendarTable">
     {%- for dates in site.posts -%}
         {%- if page.url == '/' -%}
-            {%- assign page_lang = 'en' -%}
+            {%- assign page_lang = site.default_lang -%}
         {%- else -%}
             {%- assign page_lang = page.lang -%}
         {%- endif -%}

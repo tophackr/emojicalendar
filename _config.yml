@@ -4,12 +4,12 @@ description: >
 baseurl: ''
 url: ''
 
+default_lang: en
+
+twitter: tophackr_com
 image:
   logo: /assets/et8h.png
   large: /assets/et8h-large.png
-  background: /assets/background.png
-
-twitter: tophackr_com
 
 yandex_metrika: 56873668
 google_analytics: UA-117276892-3

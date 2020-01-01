@@ -9,7 +9,7 @@
             {%- elsif page.slug -%}
                 {%- assign url_tripleday = page.slug -%}
             {%- else -%}
-                {%- assign url_tripleday = 'en' -%}
+                {%- assign url_tripleday = site.default_lang -%}
             {%- endif -%}
 
             {%- assign now_tripleday1 = 'now' | date: '%s' | minus: 86400 -%}
