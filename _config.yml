@@ -19,4 +19,7 @@ timezone: Europe/Moscow
 encoding: utf-8
 permalink: pretty
 future: true
-exclude: ['LICENSE', 'CHANGELOG.md', 'README.md']
+plugins:
+  - liquid-md5
+  - jekyll-sitemap
+exclude: ['LICENSE', 'CHANGELOG.md', 'README.md', 'emojicalendar.png']

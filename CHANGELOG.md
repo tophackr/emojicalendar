@@ -65,8 +65,8 @@
 
 - First release
 
-[v2.2]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.1-r...v2.2-r
-[v2.1]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.0.1-r...v2.1-r
-[v2.0.1]: https://gitlab.com/tophackr/EmojiCalendar/compare/v2.0-r...v2.0.1-r
-[v2.0]: https://gitlab.com/tophackr/EmojiCalendar/compare/v1.0-r...v2.0-r
-[v1.0]: https://gitlab.com/tophackr/EmojiCalendar/compare/9e551822...v1.0-r
+[v2.2]: https://github.com/tophackr/EmojiCalendar/compare/v2.1-r...v2.2-r
+[v2.1]: https://github.com/tophackr/EmojiCalendar/compare/v2.0.1-r...v2.1-r
+[v2.0.1]: https://github.com/tophackr/EmojiCalendar/compare/v2.0-r...v2.0.1-r
+[v2.0]: https://github.com/tophackr/EmojiCalendar/compare/v1.0-r...v2.0-r
+[v1.0]: https://github.com/tophackr/EmojiCalendar/compare/9e551822...v1.0-r
